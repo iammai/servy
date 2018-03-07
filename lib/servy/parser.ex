@@ -9,6 +9,8 @@ defmodule Servy.Parser do
 
     [method, path, _] = String.split(request_line, " ")
 
+    headers = parse_headers(header_lines)
+
     params = parse_params(params_string)
 
     IO.inspect header_lines
@@ -16,8 +18,13 @@ defmodule Servy.Parser do
     %Conv{
       method: method,
       path: path,
-      params: params
+      params: params,
+      headers: headers
     }
+  end
+
+  def parse_headers(header_lines) do
+    headers = %{}
   end
 
   def parse_params(params_string) do
