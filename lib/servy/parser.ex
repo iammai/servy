@@ -25,6 +25,11 @@ defmodule Servy.Parser do
 
   def parse_headers([head | tail]) do
     IO.puts "Head: #{inspect(head)} Tail#{inspect(tail)}"
+
+    [key, value] = String.split(head, ": ")
+
+    IO.puts "Key: #{inspect(head)} Value: #{inspect(tail)}"
+
     parse_headers(tail)
   end
 
