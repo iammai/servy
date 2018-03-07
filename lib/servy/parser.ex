@@ -11,6 +11,8 @@ defmodule Servy.Parser do
 
     params = parse_params(params_string)
 
+    IO.inspect header_lines
+
     %Conv{
       method: method,
       path: path,
