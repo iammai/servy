@@ -30,6 +30,10 @@ defmodule Servy.Parser do
 
     IO.puts "Key: #{inspect(key)} Value: #{inspect(value)}"
 
+    headers = Map.put(%{}, key, value)
+
+    IO.inspect headers
+
     parse_headers(tail)
   end
 
