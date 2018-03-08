@@ -28,7 +28,11 @@ defmodule Servy.Parser do
 
     [key, value] = String.split(head, ": ")
 
-    IO.puts "Key: #{inspect(head)} Value: #{inspect(tail)}"
+    IO.puts "Key: #{inspect(key)} Value: #{inspect(value)}"
+
+    headers = Map.put(%{}, key, value)
+
+    IO.puts headers
 
     parse_headers(tail)
   end
