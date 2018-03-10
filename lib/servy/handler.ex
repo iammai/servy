@@ -1,6 +1,7 @@
 require Logger
 
 alias Servy.Conv
+alias Servy.BearController
 
 defmodule Servy.Handler do
 
@@ -42,7 +43,7 @@ defmodule Servy.Handler do
   end
 
   def route(%Conv{ method: "GET", path: "/bears" } = conv) do
-    %{ conv | status: 200, resp_body: "Teddy, Smoky, Paddington" }
+    BearController.index(conv)
   end
 
   def route(%Conv{ method: "GET", path: "/bears/new"} = conv) do
