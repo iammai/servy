@@ -15,4 +15,8 @@ defmodule Servy.Wildthings do
     %Bear{id: 10, name: "Kenai", type: "Grizzly"}
   ]
   end
+
+  def get_bear(id) do
+    Enum.find(list_bears(), fn(b) -> b.id == id end)
+  end
 end
