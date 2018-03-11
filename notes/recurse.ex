@@ -34,6 +34,15 @@ defmodule Recurse do
   def triple([]) do
     []
   end
+
+  def my_map([head | tail], fun) do
+    IO.puts "Head: #{head} Tail: #{inspect(tail)}"
+    [fun.(head) | my_map(tail, fun)]
+  end
+
+  def my_map([], _) do
+    []
+  end
 end
 
 Recurse.sum([1, 2, 3, 4, 5], 0)
@@ -43,3 +52,6 @@ IO.inspect mt
 t = Recurse.triple([1, 2, 3, 4, 5])
 IO.inspect t
 # Expected result [3, 6, 9, 12, 15]
+
+nums = [1, 2, 3, 4, 5]
+IO.inspect Recurse.my_map(nums, &(&1 * 5))
