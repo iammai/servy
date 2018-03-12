@@ -13,8 +13,6 @@ defmodule Servy.Parser do
 
     params = parse_params(headers["Content-Type"], params_string)
 
-    IO.inspect header_lines
-
     %Conv{
       method: method,
       path: path,
