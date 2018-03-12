@@ -4,7 +4,7 @@ defmodule Servy.Api.BearController do
     json = Servy.Wildthings.list_bears()
       |> Poison.encode!
 
-    %{conv | status: 200, resp_body: json}
+    %{conv | status: 200, resp_content_type: "application/json", resp_body: json}
   end
 
 end
