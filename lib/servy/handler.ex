@@ -23,9 +23,11 @@ defmodule Servy.Handler do
   end
 
   def route(%Conv{ method: "GET", path: "/snapshots" } = conv) do
+    #pid1 = spawn(fn -> {:result, VideoCam.get_snapshot("cam-1") end)
+
     snapshot1 = VideoCam.get_snapshot("cam-1")
     snapshot2 = VideoCam.get_snapshot("cam-2")
-    snapshot3 = VideoCam.get_snapshot("cam-4")
+    snapshot3 = VideoCam.get_snapshot("cam-3")
 
     snapshots = [snapshot1, snapshot2, snapshot3]
 
