@@ -11,6 +11,7 @@ defmodule Servy.HttpServer do
                                           active: false])
       {:ok, sock} = :gen_tcp.accept(lsock)
       {:ok, bin} = :gen_tcp.recv(sock, 0)
+      #send response
       ok = :gen_tcp.close(sock)
       bin
   end
