@@ -8,6 +8,7 @@ defmodule Servy.PledgeServer do
         {:ok, id} = send_pledge_to_service(name, amount)
         new_state = [ {name, amount} | state ]
         IO.puts "#{name} pledged #{amount}"
+        IO.puts "New state is #{inspect new_state}"
         #code
         listen_loop(new_state)
     end
