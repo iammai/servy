@@ -29,10 +29,10 @@ defmodule Servy.Handler do
     pid3 = Fetcher.async(fn -> VideoCam.get_snapshot("cam-1") end)
     pid4 = Fetcher.async(fn -> Servy.Tracker.get_location("bigfoot") end)
 
+    where_is_bigfoot = Fetcher.get_result(pid4)
     snapshot1 = Fetcher.get_result(pid1)
     snapshot2 = Fetcher.get_result(pid2)
     snapshot3 = Fetcher.get_result(pid3)
-    where_is_bigfoot = Fetcher.get_result(pid4)
 
     snapshots = [snapshot1, snapshot2, snapshot3]
 
