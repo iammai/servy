@@ -13,7 +13,7 @@ defmodule Servy.PledgeServer do
         listen_loop(new_state)
       {sender, :recent_pledges} ->
         send sender, {:response, state}
-        IO.puts "sent pledges to #{{inspect sender}}"
+        IO.puts "sent pledges to #{inspect sender}}"
         listen_loop(state)
     end
   end
