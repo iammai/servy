@@ -4,7 +4,9 @@ defmodule Servy.PledgeServer do
     IO.puts"\nWaiting for a message..."
 
     receive do
-      {:message_type, value} ->
+      {:create_pledge, name, amount} ->
+        {:ok, id} = send_pledge_to_service(name, amount)
+        IO.puts "#{name} pledged #{amount}"
         #code
         listen_loop()
     end
