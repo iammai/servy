@@ -6,6 +6,7 @@ defmodule Servy.PledgeServer do
     receive do
       {:create_pledge, name, amount} ->
         {:ok, id} = send_pledge_to_service(name, amount)
+        cache = [ {name, amount} ]
         IO.puts "#{name} pledged #{amount}"
         #code
         listen_loop()
