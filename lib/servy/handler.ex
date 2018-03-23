@@ -5,7 +5,6 @@ defmodule Servy.Handler do
   alias Servy.Conv
   alias Servy.BearController
   alias Servy.VideoCam
-  alias Servy.Fetcher
 
   @pages_path Path.expand("../../pages", __DIR__)
 
