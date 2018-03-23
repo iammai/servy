@@ -5,7 +5,8 @@ defmodule Servy.PledgeServer do
 
     receive do
       {:message_type, value} ->
-        $cpde
+        #code
+        listen_loop()
     end
   end
 
